@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_image
+  has_many :books
+  # ↑ 1人のuserがbookを複数持っているの定義
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
 
