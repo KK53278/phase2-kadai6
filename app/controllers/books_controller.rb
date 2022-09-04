@@ -24,7 +24,7 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   end
 
   def edit
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
@@ -49,7 +49,7 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   end
 
   def ensure_correct_user
-    @book =book.find(params[:id])
+         @book = Book.find(params[:id])
     unless @book.user == current_user
       redirect_to books_path
     end
