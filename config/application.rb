@@ -18,6 +18,6 @@ module Bookers2
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.hosts << "b2dcae86f1e44ec6bfc0846e106152eb.vfs.cloud9.ap-northeast-1.amazonaws.com"
+
   end
 end
