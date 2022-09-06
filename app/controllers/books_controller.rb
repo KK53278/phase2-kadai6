@@ -3,8 +3,6 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def show
     @book = Book.find(params[:id])
-    @user = @book.user
-    @books = Book.new
     @book_comment = BookComment.new
   end
 
@@ -25,11 +23,9 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to @book, notice: "You have updated book successfully."
     else
@@ -38,7 +34,6 @@ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   end
 
   def destroy
-    @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path, notice: "successfully delete book!"
   end

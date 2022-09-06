@@ -14,9 +14,4 @@ class FavoritesController < ApplicationController
     redirect_to request.referer
   end
 
-  private
-
-  def book_params
-    params.require(:book).permit(:title, :body, :book_id, :user_id)
-  end
 end
